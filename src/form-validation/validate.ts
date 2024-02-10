@@ -11,11 +11,13 @@ export const validateValues = (values: { email: string; password: string }) => {
     throw new Error("password is short");
   }
   return {
-    email: values.email,
-    password: values.password,
+    email: values.email as Email,
+    password: values.password as Password,
   };
 };
 
-const createUserApi = (values: { email: string; password: string }) => {
+const createUserApi = (values: { email: Email; password: Password }) => {
   // the api call goes here
 };
+
+const onSubmitHandler = (values: { email: string; password: string }) => {};
